@@ -11,13 +11,10 @@ const server = http.Server(app);
 
 setupWebSocket(server);
 
-mongoose.connect(
-  "mongodb+srv://haarlem:omnistack@omnistack9-f1dfb.mongodb.net/devradar?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect("mongo_url", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 mongoose.set("useCreateIndex", true);
 
 app.use(cors());
