@@ -3,8 +3,6 @@ const parseStringAsArray = require("../utils/parseStringAsArray");
 
 module.exports = {
   async index(req, res) {
-    //Buscar devs num raio X
-    //Buscar por techs
     const { latitude, longitude, techs } = req.query;
 
     const techsArray = parseStringAsArray(techs);
