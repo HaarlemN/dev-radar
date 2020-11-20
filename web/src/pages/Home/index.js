@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import "./global.css";
-import "./App.css";
-import "./SideBar.css";
-import "./Main.css";
+import "../global.css";
+import "../App.css";
+import "../SideBar.css";
+import "../Main.css";
 
-import DevForm from "../components/DevForm";
-import DevItem from "../components/DevItem";
+import DevForm from "../../components/DevForm";
+import DevItem from "../../components/DevItem";
 
-import api from "../services/api";
+import api from "../../services/api";
 
-function App() {
+function Home() {
   const [devs, setDevs] = useState([]);
 
   useEffect(() => {
@@ -46,4 +46,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
