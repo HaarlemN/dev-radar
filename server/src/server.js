@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const http = require("http");
 
-const dotenvExpand = requrie('dotenv-expand');
+const dotenvExpand = require('dotenv-expand');
 dotenvExpand(require('dotenv').config());
 
 const routes = require("./routes");
