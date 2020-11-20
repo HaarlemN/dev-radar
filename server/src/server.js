@@ -1,13 +1,13 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const http = require("http");
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const http = require('http');
 
 const dotenvExpand = require('dotenv-expand');
 dotenvExpand(require('dotenv').config());
 
-const routes = require("./routes");
-const { setupWebSocket } = require("./websocket");
+const routes = require('./routes');
+const { setupWebSocket } = require('./websocket');
 
 const app = express();
 const server = http.Server(app);
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-mongoose.set("useCreateIndex", true);
+mongoose.set('useCreateIndex', true);
 
 app.use(cors());
 app.use(express.json());
