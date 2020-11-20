@@ -39,8 +39,8 @@ module.exports = {
           location,
         });
 
-        // Filtrar as conexões que estão a no máximo 10km de distância
-        // e que o novo Dev tenha uma das Techs filtradas
+        // Filter connections that are at most 10km away
+        // and that the new Dev has one of the filtered Techs
 
         const sendSocketMessageTo = findConnections(
           { latitude, longitude },
