@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: #e5e6f0;
     -webkit-font-smoothing: antialiased;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 
   #root {
     display: flex;
-    
+
     width: 90vw;
 
     max-width: 700px;

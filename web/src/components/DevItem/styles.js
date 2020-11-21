@@ -46,7 +46,7 @@ export const Link = styled.a`
   color: #8e4dff;
   font-size: 1.4rem;
   text-decoration: none;
-  
+
   transition: color 0.3s;
 
   &:hover {

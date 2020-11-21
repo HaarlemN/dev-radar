@@ -1,29 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 import { Button, InputGroup, Form } from './styles';
 
 import Input from '../Input';
 
 export default function DevForm({ onSubmit }) {
-  const [github_username, setGitHubUsername] = useState("");
-  const [techs, setTechs] = useState("");
+  const [github_username, setGitHubUsername] = useState('');
+  const [techs, setTechs] = useState('');
 
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        setLatitude(latitude);
-        setLongitude(longitude);
+      position => {
+        const { latitude: lat, longitude: lng } = position.coords;
+        setLatitude(lat);
+        setLongitude(lng);
       },
-      (err) => {
+      err => {
+        // eslint-disable-next-line
         console.log(err);
       },
       {
         timeout: 30000,
-      }
+      },
     );
   }, []);
 
@@ -37,8 +38,8 @@ export default function DevForm({ onSubmit }) {
       longitude,
     });
 
-    setGitHubUsername("");
-    setTechs("");
+    setGitHubUsername('');
+    setTechs('');
   }
 
   return (
@@ -49,7 +50,7 @@ export default function DevForm({ onSubmit }) {
         type="text"
         required
         value={github_username}
-        onChange={(event) => setGitHubUsername(event.target.value)}
+        onChange={event => setGitHubUsername(event.target.value)}
       />
 
       <Input
@@ -58,7 +59,7 @@ export default function DevForm({ onSubmit }) {
         type="text"
         required
         value={techs}
-        onChange={(event) => setTechs(event.target.value)}
+        onChange={event => setTechs(event.target.value)}
       />
 
       <InputGroup>
@@ -68,7 +69,7 @@ export default function DevForm({ onSubmit }) {
           type="number"
           required
           value={latitude}
-          onChange={(event) => setLatitude(event.target.value)}
+          onChange={event => setLatitude(event.target.value)}
         />
 
         <Input
@@ -77,7 +78,7 @@ export default function DevForm({ onSubmit }) {
           type="number"
           required
           value={longitude}
-          onChange={(event) => setLongitude(event.target.value)}
+          onChange={event => setLongitude(event.target.value)}
         />
       </InputGroup>
       <Button type="submit">Salvar</Button>

@@ -6,7 +6,7 @@ function Input({ label, name, ...inputProps }) {
   return (
     <Container>
       <Label htmlFor={name}>{label}</Label>
-      <MyInput id={name} {...inputProps}/>
+      <MyInput id={name} {...inputProps} />
     </Container>
   );
 }

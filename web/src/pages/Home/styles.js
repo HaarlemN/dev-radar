@@ -31,7 +31,7 @@ export const SideCard = styled.aside`
   border-radius: 0.2rem;
   padding: 3rem 2rem;
 
-  @media(min-width: 850px) {
+  @media (min-width: 850px) {
     width: 320px;
   }
 `;
@@ -49,7 +49,7 @@ export const DevsContainer = styled.main`
   margin-left: 0;
   margin-top: 3rem;
 
-  @media(min-width: 850px) {
+  @media (min-width: 850px) {
     margin-left: 3rem;
     margin-top: 0;
   }

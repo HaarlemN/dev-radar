@@ -7,7 +7,7 @@ import logo from '../../assets/logo.svg';
 function Header() {
   return (
     <Container>
-      <Logo src={logo} alt="DevRadar"/>
+      <Logo src={logo} alt="DevRadar" />
     </Container>
   );
 }
