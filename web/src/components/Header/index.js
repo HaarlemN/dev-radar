@@ -1,9 +1,15 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container, Logo } from './styles';
+
+import logo from '../../assets/logo.svg';
 
 function Header() {
-  return <div />;
+  return (
+    <Container>
+      <Logo src={logo} alt="DevRadar"/>
+    </Container>
+  );
 }
 
 export default Header;
