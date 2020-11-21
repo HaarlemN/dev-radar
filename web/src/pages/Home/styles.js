@@ -2,10 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 6.2rem 0;
+  padding: 3rem 0;
 
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 850px) {
+    padding: 6.2rem 0;
+  }
 `;
 
 export const Content = styled.main`
