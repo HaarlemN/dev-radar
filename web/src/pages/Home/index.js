@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, DevsContainer, DevsList, SideCard, Title } from './styles';
+import { Container, Content, DevsContainer, DevsList, SideCard, Title } from './styles';
 
+import Header from '../../components/Header';
 import DevForm from "../../components/DevForm";
 import DevItem from "../../components/DevItem";
 
@@ -27,18 +28,22 @@ function Home() {
 
   return (
     <Container>
-      <SideCard>
-        <Title>Cadastrar</Title>
-        <DevForm onSubmit={handleAddDev} />
-      </SideCard>
+      <Header />
 
-      <DevsContainer>
-        <DevsList>
-          {devs.map((dev) => (
-            <DevItem key={dev._id} dev={dev} />
-          ))}
-        </DevsList>
-      </DevsContainer>
+      <Content>
+        <SideCard>
+          <Title>Cadastrar</Title>
+          <DevForm onSubmit={handleAddDev} />
+        </SideCard>
+
+        <DevsContainer>
+          <DevsList>
+            {devs.map((dev) => (
+              <DevItem key={dev._id} dev={dev} />
+            ))}
+          </DevsList>
+        </DevsContainer>
+      </Content>
     </Container>
   );
 }
