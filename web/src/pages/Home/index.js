@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "../global.css";
-import "../App.css";
-import "../SideBar.css";
-import "../Main.css";
+import { Container, DevsContainer, DevsList, SideCard, Title } from './styles';
 
 import DevForm from "../../components/DevForm";
 import DevItem from "../../components/DevItem";
@@ -29,20 +26,20 @@ function Home() {
   }
 
   return (
-    <div id="app">
-      <aside>
-        <strong>Cadastrar</strong>
+    <Container>
+      <SideCard>
+        <Title>Cadastrar</Title>
         <DevForm onSubmit={handleAddDev} />
-      </aside>
+      </SideCard>
 
-      <main>
-        <ul>
+      <DevsContainer>
+        <DevsList>
           {devs.map((dev) => (
             <DevItem key={dev._id} dev={dev} />
           ))}
-        </ul>
-      </main>
-    </div>
+        </DevsList>
+      </DevsContainer>
+    </Container>
   );
 }
 
