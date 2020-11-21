@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  margin-top: 30px;
+  margin-top: 3.1rem;
 `;
 
 export const InputGroup = styled.div`
-  margin-top: 20px;
+  margin-top: 2rem;
   display: grid;
-  gap: 20px;
+  gap: 2rem;
   grid-template-columns: 1fr 1fr;
 
   div {
@@ -17,8 +17,8 @@ export const InputGroup = styled.div`
 
 export const Button = styled.button`
   width: 100%;
-  margin-top: 30px;
-  padding: 15px 20px;
+  margin-top: 3.1rem;
+  padding: 1.5rem 2rem;
   
   border: 0;
   border-radius: 2px;
@@ -26,7 +26,7 @@ export const Button = styled.button`
   background: #7d40e7;
   color: #fff;
   
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   
   cursor: pointer;
