@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "DevRadar",
-    "slug": "mobile-app",
+    "slug": "devradar",
     "platforms": [
       "ios",
       "android",
