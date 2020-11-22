@@ -30,6 +30,12 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
       "import/prefer-default-export": "off",
       "prettier/prettier": "error",
-      "camelcase": "off"
+      "camelcase": "off",
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": ["_id"]
+        }
+      ]
     }
 }
