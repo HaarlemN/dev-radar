@@ -4,7 +4,9 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:prettier/recommended",
+        "prettier/react"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -19,12 +21,15 @@
     },
     "plugins": [
         "react",
-        "react-hooks"
+        "react-hooks",
+        "prettier"
     ],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "prettier/prettier": "error",
+      "camelcase": "off"
     }
 }
