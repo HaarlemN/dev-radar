@@ -6,6 +6,6 @@ import logo from '../../assets/logo.png';
 
 const Logo = () => {
   return <Image source={logo} resizeMode="contain" />;
-}
+};
 
 export default Logo;

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {
   requestPermissionsAsync,
   getCurrentPositionAsync,
-} from "expo-location";
-import { Marker, Callout } from "react-native-maps";
-import { MaterialIcons } from "@expo/vector-icons";
+} from 'expo-location';
+import { Marker, Callout } from 'react-native-maps';
+// eslint-disable-next-line
+import { MaterialIcons } from '@expo/vector-icons';
 
 import {
   Map,
@@ -16,15 +18,17 @@ import {
   SearchForm,
   Input,
   Button,
-} from "./styles";
+} from './styles';
 
-import api from "../../services/api";
-import { connect, disconnect, subscribeToNewDevs } from "../../services/socket";
+import api from '../../services/api';
+import { connect, disconnect, subscribeToNewDevs } from '../../services/socket';
 
-export default function Main({ navigation }) {
+export default function Main() {
+  const navigation = useNavigation();
+
   const [currentRegion, setCurrentRegion] = useState(null);
   const [devs, setDevs] = useState([]);
-  const [techs, setTechs] = useState("");
+  const [techs, setTechs] = useState('');
 
   useEffect(() => {
     async function loadInitialPosition() {
@@ -49,7 +53,7 @@ export default function Main({ navigation }) {
   }, []);
 
   useEffect(() => {
-    subscribeToNewDevs((dev) => setDevs([...devs, dev]));
+    subscribeToNewDevs(dev => setDevs([...devs, dev]));
   }, [devs]);
 
   function setupWebsocket() {
@@ -62,7 +66,7 @@ export default function Main({ navigation }) {
 
   async function loadDevs() {
     const { latitude, longitude } = currentRegion;
-    const response = await api.get("/search", {
+    const response = await api.get('/search', {
       params: {
         latitude,
         longitude,
@@ -87,7 +91,7 @@ export default function Main({ navigation }) {
         onRegionChangeComplete={handleRegionChanged}
         initialRegion={currentRegion}
       >
-        {devs.map((dev) => (
+        {devs.map(dev => (
           <Marker
             key={dev._id}
             coordinate={{
@@ -102,7 +106,7 @@ export default function Main({ navigation }) {
             />
             <Callout
               onPress={() =>
-                navigation.navigate("profile", {
+                navigation.navigate('profile', {
                   github_username: dev.github_username,
                 })
               }
@@ -110,7 +114,7 @@ export default function Main({ navigation }) {
               <ContainerCallout>
                 <DevName>{dev.name}</DevName>
                 <DevBio>{dev.bio}</DevBio>
-                <DevTechs>{dev.techs.join(", ")}</DevTechs>
+                <DevTechs>{dev.techs.join(', ')}</DevTechs>
               </ContainerCallout>
             </Callout>
           </Marker>
@@ -123,7 +127,7 @@ export default function Main({ navigation }) {
           autoCapitalize="words"
           autoCorrect={false}
           value={techs}
-          onChangeText={(text) => setTechs(text)}
+          onChangeText={text => setTechs(text)}
         />
         <Button onPress={loadDevs}>
           <MaterialIcons name="my-location" size={20} color="#fff" />
