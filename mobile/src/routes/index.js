@@ -6,6 +6,8 @@ const Stack = createStackNavigator();
 import Main from "../pages/Main";
 import Profile from "../pages/Profile";
 
+import Logo from '../components/Logo';
+
 export default function Routes() {
   return (
     <Stack.Navigator
@@ -16,7 +18,7 @@ export default function Routes() {
     >
       <Stack.Screen
         name="main"
-        options={{ title: "DevRadar", headerTitleAlign: "center" }}
+        options={{ headerTitle: () => <Logo />, headerTitleAlign: "center" }}
         component={Main}
       />
       <Stack.Screen
