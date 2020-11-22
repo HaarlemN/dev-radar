@@ -9,11 +9,12 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
+    "primaryColor": "#ffffff",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#7D40E7"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,6 +24,13 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#7D40E7",
+      "barStyle": "light-content"
+    },
+    "androidNavigationBar": {
+      "visible": "sticky-immersive"
     }
   }
 }
