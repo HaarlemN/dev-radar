@@ -30,7 +30,8 @@
       "barStyle": "light-content"
     },
     "androidNavigationBar": {
-      "visible": "sticky-immersive"
+      "visible": "sticky-immersive",
+      "backgroundColor": "#7D40E7"
     }
   }
 }
